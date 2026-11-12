@@ -1,0 +1,136 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #202b3c;
+}
+
+.navbar {
+    background: #172b4d;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
+}
+
+h1, h2 {
+    color: #172b4d;
+}
+
+label {
+    display: block;
+    margin: 16px 0 7px;
+    font-weight: 600;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd3df;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+button, .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: #2364aa;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+button:hover, .btn:hover {
+    background: #174a83;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 7px;
+    display: none;
+}
+
+.success {
+    display: block;
+    background: #e3f7e9;
+    color: #176b35;
+}
+
+.error {
+    display: block;
+    background: #ffe8e8;
+    color: #a32323;
+}
+
+.candidate {
+    border: 1px solid #dce3ed;
+    padding: 16px;
+    border-radius: 9px;
+    margin-top: 14px;
+}
+
+.small {
+    color: #68758a;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 16px;
+    }
+
+    .navbar a {
+        margin-left: 8px;
+    }
+
+    .container {
+        margin: 20px auto;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}

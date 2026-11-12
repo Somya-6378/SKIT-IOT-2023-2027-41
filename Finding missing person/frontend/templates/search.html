@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <strong>Missing Person AI</strong>
+    <div>
+        <a href="/register-case">Register Case</a>
+        <a href="/review-matches">Review Matches</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h1>Search Missing Person by Image</h1>
+
+        <p>
+            Upload an authorized sighting image to search for
+            possible missing-person candidates.
+        </p>
+
+        <form id="searchForm">
+            <label>Upload Sighting Image</label>
+
+            <input type="file" id="searchPhoto"
+                   accept="image/jpeg,image/png,image/webp" required>
+
+            <button type="submit" id="searchButton">
+                Search Image
+            </button>
+        </form>
+
+        <div id="searchMessage" class="message"></div>
+
+        <p class="small">
+            A potential candidate is not proof of identity.
+            Every candidate requires authorized human verification.
+        </p>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

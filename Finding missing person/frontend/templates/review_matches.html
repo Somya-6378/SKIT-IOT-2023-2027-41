@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Matches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <strong>Missing Person AI</strong>
+    <div>
+        <a href="/register-case">Register Case</a>
+        <a href="/search">Search</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h1>Review Possible Matches</h1>
+
+        <label>Search ID</label>
+        <input type="number" id="searchId"
+               placeholder="Enter search ID">
+
+        <button id="loadMatchesButton" type="button">
+            Load Candidates
+        </button>
+
+        <div id="reviewMessage" class="message"></div>
+        <div id="matchesList"></div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

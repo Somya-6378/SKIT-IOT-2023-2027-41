@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Missing Person AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Missing Person AI</h1>
+        <p>AI-powered Missing Person Identification System</p>
+
+        <h2>Login to your account</h2>
+
+        <form id="loginForm">
+            <label>Email Address</label>
+            <input type="email" id="email" required
+                   placeholder="Enter your email">
+
+            <label>Password</label>
+            <input type="password" id="password" required
+                   placeholder="Enter your password">
+
+            <label>User Role</label>
+            <select id="role" required>
+                <option value="">Select role</option>
+                <option value="family">Family</option>
+                <option value="police">Police</option>
+                <option value="ngo">NGO</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button type="submit" id="loginButton">Sign In</button>
+        </form>
+
+        <div id="loginMessage" class="message"></div>
+        <p class="small">
+            Login authentication will be connected in the next backend step.
+        </p>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
