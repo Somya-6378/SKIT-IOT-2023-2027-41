@@ -60,11 +60,16 @@ def generate_embedding(image_path):
             "success": False,
             "error": "Image resolution is too small"
         }
-    max_dim = 800 
+    max_dim = 1200 
     if max(height, width) > max_dim: 
         scale = max_dim / max(height, width)
         image = cv2.resize(image, (int(width * scale), int(height * scale)))
         height, width = image.shape[:2]
+        lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+        l , a , b = cv2.split(lab)
+        clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+        l = clahe.apply(l)
+        image = cv2.cvtColor(cv2.merge((l,a,b)), cv2.COLOR_LAB2BGR)
     try:
 
          # 6. Detect faces and generate embeddings
@@ -84,9 +89,8 @@ def generate_embedding(image_path):
         for res in raw_results:
             area_info = res["facial_area"]
             face_area = area_info["w"] * area_info["h"]
-            has_eyes = (area_info.get("left_eye") is not None) or (area_info.get("right_eye") is not None)
-
-            if face_area >= (0.01 * img_area) and has_eyes:
+            
+            if face_area >= (0.015 * img_area):
                 valid_faces.append(res)
 
         valid_faces.sort(key=lambda x: x["facial_area"]["w"] * x["facial_area"]["h"], reverse=True)
