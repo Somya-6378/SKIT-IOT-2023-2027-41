@@ -1,7 +1,7 @@
 
 from AI.face_pipeline import generate_embedding
 
-image_path = "test_images/person1.jpg"
+image_path = "test_images/large.jpg"
 
 result = generate_embedding(image_path)
 
